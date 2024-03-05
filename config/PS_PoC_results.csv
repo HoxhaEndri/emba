@@ -370,6 +370,7 @@ CVE-2007-3336;Computer Associates Advantage Ingres 2.6 Denial Of Service;https:/
 CVE-2007-3337;Computer Associates Advantage Ingres 2.6 Denial Of Service;https://packetstormsecurity.com/files/92818/Computer-Associates-Advantage-Ingres-2.6-Denial-Of-Service.html;DoS
 CVE-2007-3338;Computer Associates Advantage Ingres 2.6 Denial Of Service;https://packetstormsecurity.com/files/92818/Computer-Associates-Advantage-Ingres-2.6-Denial-Of-Service.html;DoS
 CVE-2007-3386;CVE 2007 3386.txt;https://packetstormsecurity.com/files/58554/CVE-2007-3386.txt.html;unknown
+CVE-2007-3386;wireshark dos.txt;https://packetstormsecurity.com/files/58567/wireshark-dos.txt.html;DoS
 CVE-2007-3510;CVE 2007 3510.pl.txt;https://packetstormsecurity.com/files/60476/CVE-2007-3510.pl.txt.html;unknown
 CVE-2007-3510;waraxe 2007 SA059.txt;https://packetstormsecurity.com/files/60477/waraxe-2007-SA059.txt.html;unknown
 CVE-2007-3566;interbase_create.rb.txt;https://packetstormsecurity.com/files/58325/interbase_create.rb.txt.html;unknown
@@ -658,8 +659,8 @@ CVE-2009-2692;Linux 2.x sock_sendpage Local Root;https://packetstormsecurity.com
 CVE-2009-2692;Linux NULL Pointer Dereference;https://packetstormsecurity.com/files/80341/Linux-NULL-Pointer-Dereference.html;local
 CVE-2009-2698;Linux 2.6 ip_append_data ring0 Root Exploit;https://packetstormsecurity.com/files/80781/Linux-2.6-ip_append_data-ring0-Root-Exploit.html;unknown
 CVE-2009-2698;Linux 2.6.18 udp_sendmsg Local Root;https://packetstormsecurity.com/files/109043/Linux-2.6.18-udp_sendmsg-Local-Root.html;local
+CVE-2009-2698;Linux Kernel udp_sendmsg Local Root Exploit;https://packetstormsecurity.com/files/80934/Linux-Kernel-udp_sendmsg-Local-Root-Exploit.html;local
 CVE-2009-2698;Linux Kernel udp_sendmsg Local Root Exploit;https://packetstormsecurity.com/files/80942/Linux-Kernel-udp_sendmsg-Local-Root-Exploit.html;local
-CVE-2009-2698;Ve EDIT 0.1.4 Remote File Inclusion;https://packetstormsecurity.com/files/80935/Ve-EDIT-0.1.4-Remote-File-Inclusion.html;remote/local
 CVE-2009-2727;AIX ToolTalk Buffer Overflow;https://packetstormsecurity.com/files/82224/AIX-ToolTalk-Buffer-Overflow.html;unknown
 CVE-2009-2732;ntop 3.3.10 Denial Of Service;https://packetstormsecurity.com/files/80469/ntop-3.3.10-Denial-Of-Service.html;DoS
 CVE-2009-2733;Achievo Cross Site Scripting;https://packetstormsecurity.com/files/81984/Achievo-Cross-Site-Scripting.html;unknown
@@ -936,7 +937,7 @@ CVE-2010-3700;Spring Security Security Constraint Bypass;https://packetstormsecu
 CVE-2010-3709;PHP 5.3.3 5.2.14 ZipArchive getArchiveComment NULL Pointer Dereference;https://packetstormsecurity.com/files/95574/PHP-5.3.3-5.2.14-ZipArchive-getArchiveComment-NULL-Pointer-Dereference.html;unknown
 CVE-2010-3714;TYPO3 Unauthenticated Arbitrary File Retrieval;https://packetstormsecurity.com/files/97158/TYPO3-Unauthenticated-Arbitrary-File-Retrieval.html;unknown
 CVE-2010-3743;Visual Synapse Directory Traversal;https://packetstormsecurity.com/files/94558/Visual-Synapse-Directory-Traversal.html;unknown
-CVE-2010-3765;Firefox Interleaving Denial Of Service;https://packetstormsecurity.com/files/95201/Firefox-Interleaving-Denial-Of-Service.html;DoS
+CVE-2010-3765;ACC IMoveis 4.0 SQL Injection;https://packetstormsecurity.com/files/95204/ACC-IMoveis-4.0-SQL-Injection.html;remote/DoS
 CVE-2010-3765;Firefox Memory Corruption;https://packetstormsecurity.com/files/95278/Firefox-Memory-Corruption.html;unknown
 CVE-2010-3847;GNU C Library Dynamic Linker ORIGIN Expansion Vulnerability;https://packetstormsecurity.com/files/94955/GNU-C-Library-Dynamic-Linker-ORIGIN-Expansion-Vulnerability.html;unknown
 CVE-2010-3848;Linux Kernel Econet Privilege Escalation;https://packetstormsecurity.com/files/104820/Linux-Kernel-Econet-Privilege-Escalation.html;unknown
@@ -1955,7 +1956,7 @@ CVE-2013-5692;X2CRM 3.4.1 Cross Site Scripting Local File Inclusion;https://pack
 CVE-2013-5693;X2CRM 3.4.1 Cross Site Scripting Local File Inclusion;https://packetstormsecurity.com/files/123387/X2CRM-3.4.1-Cross-Site-Scripting-Local-File-Inclusion.html;local
 CVE-2013-5694;Ops View Pre 4.4.1 Blind SQL Injection;https://packetstormsecurity.com/files/123821/Ops-View-Pre-4.4.1-Blind-SQL-Injection.html;remote
 CVE-2013-5695;Ops View Pre 4.4.1 Cross Site Scripting;https://packetstormsecurity.com/files/123801/Ops-View-Pre-4.4.1-Cross-Site-Scripting.html;unknown
-CVE-2013-5696;GLPI 0.84.1 Access Control Code Injection;https://packetstormsecurity.com/files/123481/GLPI-0.84.1-Access-Control-Code-Injection.html;unknown
+CVE-2013-5696;GLPI 0.84.1 Access Control Code Injection;https://packetstormsecurity.com/files/123481/GLPI-0.84.1-Access-Control-Code-Injection.html;remote
 CVE-2013-5697;mod_accounting 0.5 Blind SQL Injection;https://packetstormsecurity.com/files/123408/mod_accounting-0.5-Blind-SQL-Injection.html;remote
 CVE-2013-5701;Watchguard Server Center 11.7.4 Insecure Library Loading;https://packetstormsecurity.com/files/123147/Watchguard-Server-Center-11.7.4-Insecure-Library-Loading.html;unknown
 CVE-2013-5702;Watchguard Server Center 11.7.4 Cross Site Scripting;https://packetstormsecurity.com/files/123707/Watchguard-Server-Center-11.7.4-Cross-Site-Scripting.html;unknown
@@ -4882,7 +4883,6 @@ CVE-2017-3133;FortiOS 5.6.0 Cross Site Scripting;https://packetstormsecurity.com
 CVE-2017-3141;BIND 9.10.5 Unquoted Service Path Privilege Escalation;https://packetstormsecurity.com/files/142800/BIND-9.10.5-Unquoted-Service-Path-Privilege-Escalation.html;unknown
 CVE-2017-3210;Portrait Display SDK Service Privilege Escalation;https://packetstormsecurity.com/files/142312/Portrait-Display-SDK-Service-Privilege-Escalation.html;unknown
 CVE-2017-3241;CVE 2017 3241 Proof Of Concept;https://packetstormsecurity.com/files/141104/CVE-2017-3241-Proof-Of-Concept.html;remote
-CVE-2017-3241;OpenText Documentum D2 4.x Remote Code Execution;https://packetstormsecurity.com/files/141105/OpenText-Documentum-D2-4.x-Remote-Code-Execution.html;remote
 CVE-2017-3241;Oracle OpenJDK Runtime Environment Build 1.8.0_112 b15 Denial Of Service;https://packetstormsecurity.com/files/140680/Oracle-OpenJDK-Runtime-Environment-Build-1.8.0_112-b15-Denial-Of-Service.html;DoS
 CVE-2017-3248;Oracle WebLogic 12.1.2.0 Remote Code Execution;https://packetstormsecurity.com/files/148460/Oracle-WebLogic-12.1.2.0-Remote-Code-Execution.html;remote
 CVE-2017-3277;Oracle E Business Suite 12.x Unconstrainted File Download;https://packetstormsecurity.com/files/140677/Oracle-E-Business-Suite-12.x-Unconstrainted-File-Download.html;unknown
@@ -7580,7 +7580,7 @@ CVE-2019-8043;Adobe Acrobat Reader DC For Windows JP2 Stream Out Of Bounds Read;
 CVE-2019-8044;Adobe Acrobat Reader DC For Windows JP2 Stream Double Free;https://packetstormsecurity.com/files/154115/Adobe-Acrobat-Reader-DC-For-Windows-JP2-Stream-Double-Free.html;unknown
 CVE-2019-8045;Adobe Acrobat Reader DC For Windows Uninitialized Pointer free;https://packetstormsecurity.com/files/154114/Adobe-Acrobat-Reader-DC-For-Windows-Uninitialized-Pointer-free.html;unknown
 CVE-2019-8046;Adobe Acrobat Reader DC For Windows JP2 Stream Buffer Overflow;https://packetstormsecurity.com/files/154112/Adobe-Acrobat-Reader-DC-For-Windows-JP2-Stream-Buffer-Overflow.html;unknown
-CVE-2019-8048;Adobe Acrobat Reader DC For Windows Malformed Font Stream Buffer Overflow;https://packetstormsecurity.com/files/154107/Adobe-Acrobat-Reader-DC-For-Windows-Malformed-Font-Stream-Buffer-Overflow.html;unknown
+CVE-2019-8048;Adobe Acrobat Reader DC For Windows Malformed Font Stream Buffer Overflow;https://packetstormsecurity.com/files/154106/Adobe-Acrobat-Reader-DC-For-Windows-Malformed-Font-Stream-Buffer-Overflow.html;unknown
 CVE-2019-8049;Adobe Acrobat Reader DC For Windows Malformed Font Stream Buffer Overflow;https://packetstormsecurity.com/files/154107/Adobe-Acrobat-Reader-DC-For-Windows-Malformed-Font-Stream-Buffer-Overflow.html;unknown
 CVE-2019-8050;Adobe Acrobat Reader DC For Windows Malformed PDF Buffer Overflow;https://packetstormsecurity.com/files/154104/Adobe-Acrobat-Reader-DC-For-Windows-Malformed-PDF-Buffer-Overflow.html;unknown
 CVE-2019-8195;Adobe Acrobat Reader DC For Windows Malformed JBIG2Globals Stream Uninitialized Pointer;https://packetstormsecurity.com/files/155224/Adobe-Acrobat-Reader-DC-For-Windows-Malformed-JBIG2Globals-Stream-Uninitialized-Pointer.html;unknown
@@ -8070,7 +8070,7 @@ CVE-2020-25106;SUPREMO 4.1.3.2348 Privilege Escalation;https://packetstormsecuri
 CVE-2020-25204;God Kings 0.60.1 Notification Spoofing;https://packetstormsecurity.com/files/159747/God-Kings-0.60.1-Notification-Spoofing.html;unknown
 CVE-2020-25213;WordPress File Manager 6.9 Shell Upload;https://packetstormsecurity.com/files/171650/WordPress-File-Manager-6.9-Shell-Upload.html;remote
 CVE-2020-25270;Hostel Management System 2.1 Cross Site Scripting;https://packetstormsecurity.com/files/159614/Hostel-Management-System-2.1-Cross-Site-Scripting.html;unknown
-CVE-2020-25453;BlackCat CMS 1.3.6 Cross Site Request Forgery;https://packetstormsecurity.com/files/159237/BlackCat-CMS-1.3.6-Cross-Site-Request-Forgery.html;unknown
+CVE-2020-25453;BlackCat CMS 1.3.6 Cross Site Request Forgery;https://packetstormsecurity.com/files/159237/BlackCat-CMS-1.3.6-Cross-Site-Request-Forgery.html;remote
 CVE-2020-25454;Grocy Household Management Solution 2.7.1 Cross Site Scripting;https://packetstormsecurity.com/files/160107/Grocy-Household-Management-Solution-2.7.1-Cross-Site-Scripting.html;unknown
 CVE-2020-25494;SCO Openserver 5.0.7 Command Injection;https://packetstormsecurity.com/files/160635/SCO-Openserver-5.0.7-Command-Injection.html;unknown
 CVE-2020-25495;SCO Openserver 5.0.7 Cross Site Scripting;https://packetstormsecurity.com/files/160634/SCO-Openserver-5.0.7-Cross-Site-Scripting.html;unknown
@@ -9713,7 +9713,7 @@ CVE-2023-2575;Advantech EKI 15XX Series Command Injection Buffer Overflow;https:
 CVE-2023-25790;WordPress WoodMart Theme 7.1.0 Shortcodes Injection;https://packetstormsecurity.com/files/171154/WordPress-WoodMart-Theme-7.1.0-Shortcodes-Injection.html;unknown
 CVE-2023-2601;WordPress WP Brutal AI Cross Site Request Forgery SQL Injection;https://packetstormsecurity.com/files/173732/WordPress-WP-Brutal-AI-Cross-Site-Request-Forgery-SQL-Injection.html;remote
 CVE-2023-2605;WordPress WP Brutal AI Cross Site Scripting;https://packetstormsecurity.com/files/173734/WordPress-WP-Brutal-AI-Cross-Site-Scripting.html;unknown
-CVE-2023-2606;WordPress SEO Alert 1.59 Cross Site Scripting;https://packetstormsecurity.com/files/173731/WordPress-SEO-Alert-1.59-Cross-Site-Scripting.html;unknown
+CVE-2023-2606;WordPress WP Brutal AI Cross Site Scripting;https://packetstormsecurity.com/files/173730/WordPress-WP-Brutal-AI-Cross-Site-Scripting.html;unknown
 CVE-2023-26072;Shannon Baseband NrmmMsgCodec Emergency Number List Heap Buffer Overflow;https://packetstormsecurity.com/files/171378/Shannon-Baseband-NrmmMsgCodec-Emergency-Number-List-Heap-Buffer-Overflow.html;unknown
 CVE-2023-26073;Shannon Baseband NrmmMsgCodec Extended Emergency Number List Heap Buffer Overflow;https://packetstormsecurity.com/files/171380/Shannon-Baseband-NrmmMsgCodec-Extended-Emergency-Number-List-Heap-Buffer-Overflow.html;unknown
 CVE-2023-26074;Shannon Baseband NrmmMsgCodec Access Category Definitions Heap Buffer Overflow;https://packetstormsecurity.com/files/171383/Shannon-Baseband-NrmmMsgCodec-Access-Category-Definitions-Heap-Buffer-Overflow.html;unknown
@@ -9918,6 +9918,7 @@ CVE-2023-36355;TP Link TL WR940N 4 Buffer Overflow;https://packetstormsecurity.c
 CVE-2023-3636;WordPress WP Project Manager 2.6.4 Privilege Escalation;https://packetstormsecurity.com/files/174111/WordPress-WP-Project-Manager-2.6.4-Privilege-Escalation.html;unknown
 CVE-2023-36403;Windows Kernel Race Conditions;https://packetstormsecurity.com/files/176209/Windows-Kernel-Race-Conditions.html;unknown
 CVE-2023-36404;Windows Kernel Information Disclosure;https://packetstormsecurity.com/files/176110/Windows-Kernel-Information-Disclosure.html;unknown
+CVE-2023-3643;Boss Mini 1.4.0 Local File Inclusion;https://packetstormsecurity.com/files/177394/Boss-Mini-1.4.0-Local-File-Inclusion.html;local
 CVE-2023-36576;Windows Kernel Containerized Registry Escape;https://packetstormsecurity.com/files/175659/Windows-Kernel-Containerized-Registry-Escape.html;unknown
 CVE-2023-36618;Atos Unify OpenScape Code Execution Missing Authentication;https://packetstormsecurity.com/files/174704/Atos-Unify-OpenScape-Code-Execution-Missing-Authentication.html;remote
 CVE-2023-36619;Atos Unify OpenScape Code Execution Missing Authentication;https://packetstormsecurity.com/files/174704/Atos-Unify-OpenScape-Code-Execution-Missing-Authentication.html;remote
@@ -9957,6 +9958,9 @@ CVE-2023-3849;mooDating 1.2 Cross Site Scripting;https://packetstormsecurity.com
 CVE-2023-38501;Copyparty 1.8.6 Cross Site Scripting;https://packetstormsecurity.com/files/173821/Copyparty-1.8.6-Cross-Site-Scripting.html;unknown
 CVE-2023-38646;Metabase 0.46.6 Remote Code Execution;https://packetstormsecurity.com/files/177138/Metabase-0.46.6-Remote-Code-Execution.html;remote
 CVE-2023-38836;BoidCMS 2.0.0 Shell Upload;https://packetstormsecurity.com/files/175026/BoidCMS-2.0.0-Shell-Upload.html;remote
+CVE-2023-38944;Multilaser RE160V Header Manipulation Access Bypass;https://packetstormsecurity.com/files/177391/Multilaser-RE160V-Header-Manipulation-Access-Bypass.html;unknown
+CVE-2023-38945;Multilaser RE160V RE160 URL Manipulation Access Bypass;https://packetstormsecurity.com/files/177392/Multilaser-RE160V-RE160-URL-Manipulation-Access-Bypass.html;unknown
+CVE-2023-38946;Multilaser RE160 Cookie Manipulation Access Bypass;https://packetstormsecurity.com/files/177393/Multilaser-RE160-Cookie-Manipulation-Access-Bypass.html;unknown
 CVE-2023-38965;Lost And Found Information System 1.0 Insecure Direct Object Reference;https://packetstormsecurity.com/files/175077/Lost-And-Found-Information-System-1.0-Insecure-Direct-Object-Reference.html;unknown
 CVE-2023-3897;SureMDM On Premise CAPTCHA Bypass User Enumeration;https://packetstormsecurity.com/files/177179/SureMDM-On-Premise-CAPTCHA-Bypass-User-Enumeration.html;unknown
 CVE-2023-39026;FileMage Gateway 1.10.9 Local File Inclusion;https://packetstormsecurity.com/files/174491/FileMage-Gateway-1.10.9-Local-File-Inclusion.html;local
@@ -9999,6 +10003,7 @@ CVE-2023-43250;XNSoft Nconvert 7.136 Buffer Overflow Denial Of Service;https://p
 CVE-2023-43251;XNSoft Nconvert 7.136 Buffer Overflow Denial Of Service;https://packetstormsecurity.com/files/175145/XNSoft-Nconvert-7.136-Buffer-Overflow-Denial-Of-Service.html;DoS
 CVE-2023-43252;XNSoft Nconvert 7.136 Buffer Overflow Denial Of Service;https://packetstormsecurity.com/files/175145/XNSoft-Nconvert-7.136-Buffer-Overflow-Denial-Of-Service.html;DoS
 CVE-2023-43261;Milesight UR5X UR32L UR32 UR35 UR41 Credential Leakage;https://packetstormsecurity.com/files/176988/Milesight-UR5X-UR32L-UR32-UR35-UR41-Credential-Leakage.html;unknown
+CVE-2023-43318;TP Link JetStream Smart Switch TL SG2210P 5.0 Build 20211201 Privilege Escalation;https://packetstormsecurity.com/files/177411/TP-Link-JetStream-Smart-Switch-TL-SG2210P-5.0-Build-20211201-Privilege-Escalation.html;unknown
 CVE-2023-43320;Proxmox VE 7.4 1 TOTP Brute Force;https://packetstormsecurity.com/files/176967/Proxmox-VE-7.4-1-TOTP-Brute-Force.html;unknown
 CVE-2023-4352;Chrome Read Only Property Overwrite;https://packetstormsecurity.com/files/174669/Chrome-Read-Only-Property-Overwrite.html;unknown
 CVE-2023-4354;Chrome SKIA Integer Overflow;https://packetstormsecurity.com/files/174949/Chrome-SKIA-Integer-Overflow.html;unknown
@@ -10048,6 +10053,9 @@ CVE-2023-46389;Loytec L INX Automation Servers Information Disclosure Cleartext 
 CVE-2023-46391;WEBIGniter 28.7.23 Cross Site Scripting;https://packetstormsecurity.com/files/177220/WEBIGniter-28.7.23-Cross-Site-Scripting.html;unknown
 CVE-2023-46445;Terrapin SSH Connection Weakening;https://packetstormsecurity.com/files/176280/Terrapin-SSH-Connection-Weakening.html;unknown
 CVE-2023-46446;Terrapin SSH Connection Weakening;https://packetstormsecurity.com/files/176280/Terrapin-SSH-Connection-Weakening.html;unknown
+CVE-2023-46454;GL.iNet AR300M 4.3.7 Remote Code Execution;https://packetstormsecurity.com/files/177400/GL.iNet-AR300M-4.3.7-Remote-Code-Execution.html;remote
+CVE-2023-46455;GL.iNet AR300M 4.3.7 Arbitrary File Write;https://packetstormsecurity.com/files/177399/GL.iNet-AR300M-4.3.7-Arbitrary-File-Write.html;unknown
+CVE-2023-46456;GL.iNet AR300M 3.216 Remote Code Execution;https://packetstormsecurity.com/files/177401/GL.iNet-AR300M-3.216-Remote-Code-Execution.html;remote
 CVE-2023-46517;XAMPP 3.3.0 Buffer Overflow;https://packetstormsecurity.com/files/175381/XAMPP-3.3.0-Buffer-Overflow.html;unknown
 CVE-2023-46817;phpFox 4.8.13 PHP Object Injection;https://packetstormsecurity.com/files/175384/phpFox-4.8.13-PHP-Object-Injection.html;remote
 CVE-2023-46818;ISPConfig 3.2.11 PHP Code Injection;https://packetstormsecurity.com/files/176126/ISPConfig-3.2.11-PHP-Code-Injection.html;unknown
@@ -10088,6 +10096,7 @@ CVE-2023-48839;PHPJabbers Appointment Scheduler 3.0 Cross Site Scripting;https:/
 CVE-2023-48840;PHPJabbers Appointment Scheduler 3.0 Missing Rate Limiting;https://packetstormsecurity.com/files/176056/PHPJabbers-Appointment-Scheduler-3.0-Missing-Rate-Limiting.html;unknown
 CVE-2023-48841;PHPJabbers Appointment Scheduler 3.0 CSV Injection;https://packetstormsecurity.com/files/176058/PHPJabbers-Appointment-Scheduler-3.0-CSV-Injection.html;unknown
 CVE-2023-49070;Apache OFBiz 18.12.09 Remote Code Execution;https://packetstormsecurity.com/files/176323/Apache-OFBiz-18.12.09-Remote-Code-Execution.html;remote
+CVE-2023-49114;Qognify VMS Client Viewer 7.1 DLL Hijacking;https://packetstormsecurity.com/files/177387/Qognify-VMS-Client-Viewer-7.1-DLL-Hijacking.html;local
 CVE-2023-4911;glibc ld.so Local Privilege Escalation;https://packetstormsecurity.com/files/174986/glibc-ld.so-Local-Privilege-Escalation.html;unknown
 CVE-2023-49147;PDF24 Creator 11.15.1 Local Privilege Escalation;https://packetstormsecurity.com/files/176206/PDF24-Creator-11.15.1-Local-Privilege-Escalation.html;local
 CVE-2023-49161;WordPress Bravo Translate 1.2 SQL Injection;https://packetstormsecurity.com/files/176137/WordPress-Bravo-Translate-1.2-SQL-Injection.html;remote
@@ -10190,5 +10199,9 @@ CVE-2024-25344;ITFlow Cross Site Request Forgery;https://packetstormsecurity.com
 CVE-2024-25734;WyreStorm Apollo VX20 Account Enumeration;https://packetstormsecurity.com/files/177081/WyreStorm-Apollo-VX20-Account-Enumeration.html;unknown
 CVE-2024-25735;WyreStorm Apollo VX20 Credential Disclosure;https://packetstormsecurity.com/files/177082/WyreStorm-Apollo-VX20-Credential-Disclosure.html;unknown
 CVE-2024-25736;WyreStorm Apollo VX20 Incorrect Access Control;https://packetstormsecurity.com/files/177083/WyreStorm-Apollo-VX20-Incorrect-Access-Control.html;remote
+CVE-2024-25884;SumatraPDF 3.5.2 DLL Hijacking;https://packetstormsecurity.com/files/177397/SumatraPDF-3.5.2-DLL-Hijacking.html;unknown
 CVE-2024-25973;OpenOLAT 18.1.5 Cross Site Scripting Privilege Escalation;https://packetstormsecurity.com/files/177233/OpenOLAT-18.1.5-Cross-Site-Scripting-Privilege-Escalation.html;unknown
 CVE-2024-25974;OpenOLAT 18.1.5 Cross Site Scripting Privilege Escalation;https://packetstormsecurity.com/files/177233/OpenOLAT-18.1.5-Cross-Site-Scripting-Privilege-Escalation.html;unknown
+CVE-2024-27743;Petrol Pump Management Software 1.0 Cross Site Scripting;https://packetstormsecurity.com/files/177405/Petrol-Pump-Management-Software-1.0-Cross-Site-Scripting.html;unknown
+CVE-2024-27744;Petrol Pump Management Software 1.0 Cross Site Scripting;https://packetstormsecurity.com/files/177405/Petrol-Pump-Management-Software-1.0-Cross-Site-Scripting.html;unknown
+CVE-2024-27747;Petrol Pump Management System 1.0 Shell Upload;https://packetstormsecurity.com/files/177407/Petrol-Pump-Management-System-1.0-Shell-Upload.html;remote
