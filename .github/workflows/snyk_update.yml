@@ -3,6 +3,7 @@ name: Update Snyk database
 on:
   schedule:
     - cron: '0 0 * * 0' # do it every week
+  workflow_dispatch:
 
 jobs:
   update_snyk_db:
