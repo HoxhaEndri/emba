@@ -43,21 +43,23 @@ def check_snyk(vuln_url):
     
                 if x != None:
                     PoC= True
-                    tmp = re.search("GitHub PoC", page.content.decode())
 
-                    if tmp != None:
-                        Github=True
+                tmp = re.search("GitHub PoC", page.content.decode())
 
-                    tmp = re.search("curl http", page.content.decode())
+                if tmp != None:
+                    Github=True
 
-                    if tmp != None:
-                        Curl=True
+                tmp = re.search("curl http", page.content.decode())
 
-                    tmp = re.search("For example the below code contains", page.content.decode())
+                if tmp != None:
+                    Curl=True
 
-                    if tmp != None:
-                        Xml=True
+                tmp = re.search("For example the below code contains", page.content.decode())
 
+                if tmp != None:
+                    Xml=True
+
+                if PoC or Github or Curl or Xml:
                     for cve in cves:
                         ret += cve[3:] + ";" + name_from_url(vuln_url) + ";" + vuln_url[:-1] + ";" + bool_to_str(PoC) + ";" + bool_to_str(Github) + ";" + bool_to_str(Curl) + ";" + bool_to_str(Xml) + ";" + "\n"
         except ConnectionError:
