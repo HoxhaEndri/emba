@@ -81,7 +81,7 @@ ADV_CNT="$(wc -l "${SAVE_PATH}"/"${LINKS}"_sorted | awk '{print $1}')"
 echo -e "[*] Detected ${ORANGE}${ADV_CNT}${NC} advisories for download"
 echo ""
 
-python scraper.py "${SAVE_PATH}"/"${LINKS}"_sorted "${SAVE_PATH}"/Snyk_PoC_results.csv
+python ./helpers/scraper.py "${SAVE_PATH}"/"${LINKS}"_sorted "${SAVE_PATH}"/Snyk_PoC_results.csv
 sort -nr -o "${SAVE_PATH}"/Snyk_PoC_results.csv "${SAVE_PATH}"/Snyk_PoC_results.csv
 
 if [[ -f "${SAVE_PATH}"/Snyk_PoC_results.csv ]] && [[ -d "${EMBA_CONFIG_PATH}" ]]; then
