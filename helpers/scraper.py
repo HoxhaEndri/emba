@@ -23,7 +23,7 @@ def bool_to_str(bool):
         return "no"
 
 def name_from_url(url):
-    return url.split("vuln/")[1].strip()
+    return url.split("vuln/")[1][:-1]
             
 def check_snyk(vuln_url):
     ret = ""
