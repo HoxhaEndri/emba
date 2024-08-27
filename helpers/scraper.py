@@ -23,7 +23,7 @@ def bool_to_str(bool):
         return "no"
 
 def name_from_url(url):
-    return url.split("vuln/")[1][:-1]
+    return url.split("vuln/")[1].strip()
             
 def check_snyk(vuln_url):
     ret = ""
@@ -32,17 +32,20 @@ def check_snyk(vuln_url):
     Curl=False
     Xml=False
     cves = list()
-    if "https://" in vuln_url:
+
+    vuln_url = vuln_url.strip()
+
+    if vuln_url.startswith("https://"):
         try:
             page = requests.get(vuln_url)
             #https://www.cve.org/CVERecord?id=CVE-2024-5585
             cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
 
             if len(cves) > 0:
-                x = re.search("PoC",page.content.decode())
+                x = re.search("\bPoC\b",page.content.decode())
     
                 if x != None:
-                    PoC= True
+                    PoC=True
 
                 tmp = re.search("GitHub PoC", page.content.decode())
 
