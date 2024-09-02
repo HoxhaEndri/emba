@@ -66,7 +66,9 @@ def check_snyk(vuln_url):
                     if PoC or Github or Curl or Xml:
                         for cve in cves:
                             ret += cve[3:] + ";" + name_from_url(vuln_url) + ";" + vuln_url[:-1] + ";" + bool_to_str(PoC) + ";" + bool_to_str(Github) + ";" + bool_to_str(Curl) + ";" + bool_to_str(Xml) + ";" + "\n"
-                            print(cve[3:]+";"+str(PoC))
+                            print(cve[3:]+";"+name_from_url(vuln_url) + ";"+str(PoC)+";"+x+":"+"\n"+page.content.decode())
+                    else:
+                        print("No tags found for: "+name_from_url(vuln_url))
             else:
                 print("Error " + str(page.status_code) + "for:"+vuln_url)
         except ConnectionError:
