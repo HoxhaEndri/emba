@@ -33,9 +33,7 @@ def check_snyk(vuln_url):
     Xml=False
     cves = list()
 
-    vuln_url = vuln_url.strip()
-
-    if vuln_url.startswith("https://"):
+    if "https://" in vuln_url:
         try:
             page = requests.get(vuln_url)
             #https://www.cve.org/CVERecord?id=CVE-2024-5585
