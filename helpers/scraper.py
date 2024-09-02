@@ -36,33 +36,39 @@ def check_snyk(vuln_url):
     if "https://" in vuln_url:
         try:
             page = requests.get(vuln_url)
-            #https://www.cve.org/CVERecord?id=CVE-2024-5585
-            cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
 
-            if len(cves) > 0:
-                x = re.search("PoC",page.content.decode())
+            if page.status_code == 200:
+
+                #https://www.cve.org/CVERecord?id=CVE-2024-5585
+                cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
+
+                if len(cves) > 0:
+                    x = re.search("PoC",page.content.decode())
     
-                if x != None:
-                    PoC=True
+                    if x != None:
+                        PoC=True
 
-                tmp = re.search("GitHub PoC", page.content.decode())
+                    tmp = re.search("GitHub PoC", page.content.decode())
 
-                if tmp != None:
-                    Github=True
+                    if tmp != None:
+                        Github=True
 
-                tmp = re.search("curl http", page.content.decode())
+                    tmp = re.search("curl http", page.content.decode())
 
-                if tmp != None:
-                    Curl=True
+                    if tmp != None:
+                        Curl=True
 
-                tmp = re.search("For example the below code contains", page.content.decode())
+                    tmp = re.search("For example the below code contains", page.content.decode())
 
-                if tmp != None:
-                    Xml=True
+                    if tmp != None:
+                        Xml=True
 
-                if PoC or Github or Curl or Xml:
-                    for cve in cves:
-                        ret += cve[3:] + ";" + name_from_url(vuln_url) + ";" + vuln_url[:-1] + ";" + bool_to_str(PoC) + ";" + bool_to_str(Github) + ";" + bool_to_str(Curl) + ";" + bool_to_str(Xml) + ";" + "\n"
+                    if PoC or Github or Curl or Xml:
+                        for cve in cves:
+                            ret += cve[3:] + ";" + name_from_url(vuln_url) + ";" + vuln_url[:-1] + ";" + bool_to_str(PoC) + ";" + bool_to_str(Github) + ";" + bool_to_str(Curl) + ";" + bool_to_str(Xml) + ";" + "\n"
+                            print(cve[3:]+";"+str(PoC))
+            else:
+                print("Error " + str(page.status_code) + "for:"+vuln_url)
         except ConnectionError:
             print("Failed to open this url: "+vuln_url)
     return ret
