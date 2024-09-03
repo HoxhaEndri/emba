@@ -43,7 +43,7 @@ def check_snyk(vuln_url):
                 cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
 
                 if len(cves) > 0:
-                    x = re.search("[^a-zA-Z]PoC[^a-zA-Z]",page.content.decode())
+                    x = re.search("[^a-zA-Z]PoC",page.content.decode())
     
                     if x != None:
                         PoC=True
