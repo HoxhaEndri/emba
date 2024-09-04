@@ -45,13 +45,13 @@ def check_snyk(vuln_url):
             if page.status_code == 200:
 
                 #https://www.cve.org/CVERecord?id=CVE-2024-5585
-                cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
+                cves = list(set(re.findall("id=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
 
                 if len(cves) > 0:
 
                     soup = BeautifulSoup(page.content, 'html.parser')
                     remove_attributes(soup, "aria-describedby")
-                    page_text = soup.get_text()
+                    page_text = str(soup)
 
                     x = re.search("PoC",page_text)
     
@@ -76,7 +76,7 @@ def check_snyk(vuln_url):
                     if PoC or Github or Curl or Xml:
                         for cve in cves:
                             ret += cve[3:] + ";" + name_from_url(vuln_url) + ";" + vuln_url[:-1] + ";" + bool_to_str(PoC) + ";" + bool_to_str(Github) + ";" + bool_to_str(Curl) + ";" + bool_to_str(Xml) + ";" + "\n"
-                            print(cve[3:]+";"+name_from_url(vuln_url) + ";"+str(PoC)+";"+str(x)+":"+"\n"+page_text)
+                            print(cve[3:]+";"+name_from_url(vuln_url) + ";"+str(PoC)+";"+str(x)+":"+"\n"+soup.get_text())
                     else:
                         print("No tags found for: "+name_from_url(vuln_url))
             else:
