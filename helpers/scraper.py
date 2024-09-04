@@ -41,16 +41,18 @@ def check_snyk(vuln_url):
     if "https://" in vuln_url:
         try:
             page = requests.get(vuln_url)
-            soup = BeautifulSoup(page.content, 'html.parser')
-            remove_attributes(soup, "aria-describedby")
-            page_text = soup.get_text()
 
             if page.status_code == 200:
 
                 #https://www.cve.org/CVERecord?id=CVE-2024-5585
-                cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page_text)))
+                cves = list(set(re.findall("id\=CVE-[0-9]{4}-[0-9]+",page.content.decode())))
 
                 if len(cves) > 0:
+
+                    soup = BeautifulSoup(page.content, 'html.parser')
+                    remove_attributes(soup, "aria-describedby")
+                    page_text = soup.get_text()
+
                     x = re.search("PoC",page_text)
     
                     if x != None:
