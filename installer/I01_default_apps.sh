@@ -24,11 +24,17 @@ I01_default_apps(){
     print_tool_info "jq" 1
     print_tool_info "make" 1
     print_tool_info "tree" 1
-    print_tool_info "device-tree-compiler" 1
+    if [[ ${ARCH_OS} -eq 1 ]] ; then
+      print_tool_info "dtc" 1
+      print_tool_info "libguestfs" 1
+    else
+      print_tool_info "device-tree-compiler" 1
+      print_tool_info "libguestfs-tools" 1
+    fi
     print_tool_info "qemu-user-static" 0 "qemu-mips-static"
     #print_tool_info "pylint" 1 # not used anymore
     # libguestfs-tools is needed to mount vmdk images
-    print_tool_info "libguestfs-tools" 1
+
     print_tool_info "ent" 1
     # needed for sshdcc:
     print_tool_info "tcllib" 1

@@ -26,19 +26,26 @@ I01_default_apps_host() {
   print_tool_info "unzip" 1
   print_tool_info "bc" 1
   print_tool_info "coreutils" 1
-  print_tool_info "ncurses-bin" 1
-  print_tool_info "libnotify-bin" 1
-  print_tool_info "inotify-tools" 1
-  print_tool_info "dbus-x11" 1
-  # as we need it for multiple tools we can install it by default
   print_tool_info "git" 1
   print_tool_info "net-tools" 1
   print_tool_info "curl" 1
   print_tool_info "file" 1
+  print_tool_info "inotify-tools" 1
+  print_pip_info "requests"
+  if [[ ${ARCH_OS} -eq 1 ]] ; then
+    print_tool_info "ncurses" 1
+    print_tool_info "libnotify" 1
+    print_tool_info "dbus" 1
+    print_tool_info "python-pip" 1
+  else
+    print_tool_info "ncurses-bin" 1
+    print_tool_info "libnotify-bin" 1
+    print_tool_info "dbus-x11" 1
+    print_tool_info "python3-pip" 1
+  fi
+  # as we need it for multiple tools we can install it by default
 
   # python3.10-request
-  print_tool_info "python3-pip" 1
-  print_pip_info "requests"
 
   if [[ "${LIST_DEP}" -eq 1 ]] ; then
     ANSWER=("n")
@@ -49,7 +56,11 @@ I01_default_apps_host() {
   case ${ANSWER:0:1} in
     y|Y )
       echo
-      apt-get install "${INSTALL_APP_LIST[@]}" -y
+      if [[ ${ARCH_OS} -eq 1 ]] ; then
+        pacman -S "${INSTALL_APP_LIST[@]}" --noconfirm
+      else
+        apt-get install "${INSTALL_APP_LIST[@]}" -y
+      fi
       pip_install "requests" "-U"
 
       if ! command -v "${DOCKER_COMPOSE[@]}" > /dev/null; then

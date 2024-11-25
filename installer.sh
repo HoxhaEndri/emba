@@ -52,6 +52,7 @@ export FULL=0
 export REMOVE=0
 # other os stuff
 export OTHER_OS=0
+export ARCH_OS=0
 export UBUNTU_OS=0
 export WSL=0
 export GH_ACTION=0
@@ -193,6 +194,10 @@ elif ! grep -q "kali" /etc/debian_version 2>/dev/null ; then
     UBUNTU_OS=0 # installation procedure identical to kali install
   else
     echo -e "\n${ORANGE}WARNING: compatibility of distribution/version unknown!${NC}"
+    if grep -q "ID=arch" /etc/os-release 2>/dev/null ; then
+      ARCH_OS=1
+      echo -e "${ORANGE}Arch based distro detected! Not officially supported!!!${NC}"
+    fi
     OTHER_OS=1
     read -p "If you know what you are doing you can press any key to continue ..." -n1 -s -r
   fi
@@ -277,36 +282,56 @@ if [[ ${LIST_DEP} -eq 0 ]] ; then
     sed -i 's/deb http:\/\//deb https:\/\//g' /etc/apt/sources.list
     sed -i 's/deb-src http:\/\//deb-src https:\/\//g' /etc/apt/sources.list
   fi
-  apt-get -y update
+  if [[ ${ARCH_OS} -eq 1 ]] ; then
+    pacman -Syyu --noconfirm
+    if ! command -v yay > /dev/null; then
+      pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && mv yay-bin/PKGBUILD .
+      rm -r yay-bin
+      sudo -u "${ORIG_USER}" makepkg -si
+      rm PKGBUILD
+    fi
+  else
+    apt-get -y update
+  fi
 fi
 
 # setup the python virtual environment in external directory
 # external is also setup in the docker image
-apt-get -y install python3-venv
+if [[ ${ARCH_OS} -eq 1 ]] ; then
+  pacman -S python-virtualenv --noconfirm
+else
+  apt-get -y install python3-venv
+fi
 create_pipenv "./external/emba_venv"
 activate_pipenv "./external/emba_venv"
 
 if ! command -v docker > /dev/null || ! command -v docker compose > /dev/null ; then
-  # OS debian is for Kali Linux
-  OS="debian"
-  [[ "${UBUNTU_OS}" -eq 1 ]] && OS="ubuntu"
-  # Add Docker's official GPG key:
-  apt-get install -y ca-certificates curl gnupg
-  install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/"${OS}"/gpg -o /etc/apt/keyrings/docker.asc
-  chmod a+r /etc/apt/keyrings/docker.asc
-  # Add the repository to Apt sources:
-  if [[ "${UBUNTU_OS}" -eq 1 ]]; then
-    # shellcheck source=/dev/null
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/${OS} \
-    $(. /etc/os-release && echo "${VERSION_CODENAME}") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+  if [[ ${ARCH_OS} -eq 1 ]] ; then
+    pacman -Syu docker docker-compose docker-buildx containerd --noconfirm
+    systemctl enable docker.socket #socket does not start on boot, but on first usage, docker.service starts on boot
+    systemctl start docker.socket
   else
-    # probably a kali linux
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/${OS} \
-    bookworm stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+    # OS debian is for Kali Linux
+    OS="debian"
+    [[ "${UBUNTU_OS}" -eq 1 ]] && OS="ubuntu"
+    # Add Docker's official GPG key:
+    apt-get install -y ca-certificates curl gnupg
+    install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/"${OS}"/gpg -o /etc/apt/keyrings/docker.asc
+    chmod a+r /etc/apt/keyrings/docker.asc
+    # Add the repository to Apt sources:
+    if [[ "${UBUNTU_OS}" -eq 1 ]]; then
+      # shellcheck source=/dev/null
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/${OS} \
+      $(. /etc/os-release && echo "${VERSION_CODENAME}") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+    else
+      # probably a kali linux
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/${OS} \
+      bookworm stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+    fi
+    apt-get update -y
+    apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   fi
-  apt-get update -y
-  apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   export DOCKER_COMPOSE=("docker" "compose")
 elif command -v docker-compose > /dev/null ; then
   echo -e "\n${ORANGE}""${BOLD}""WARNING: Old docker-compose installation found""${NC}"

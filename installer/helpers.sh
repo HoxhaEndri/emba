@@ -48,10 +48,18 @@ module_title()
 
 print_tool_info(){
   echo -e "\\n""${ORANGE}""${BOLD}""${1:-}""${NC}"
-  TOOL_INFO="$(apt show "${1:-}" 2> /dev/null)"
-  if echo "${TOOL_INFO}" | grep -q "Description:" 2>/dev/null ; then
-    echo -e "$(echo "${TOOL_INFO}" | grep "Description:")"
-    SIZE=$(apt show "${1:-}" 2>/dev/null | grep Download-Size | cut -d: -f2 || true)
+  if [[ ${ARCH_OS} -eq 1 ]] ; then
+    TOOL_INFO="$(pacman -Si "${1:-}" 2> /dev/null)"
+  else
+    TOOL_INFO="$(apt show "${1:-}" 2> /dev/null)"
+  fi
+  if echo "${TOOL_INFO}" | grep -q "Description" 2>/dev/null ; then
+    echo -e "$(echo "${TOOL_INFO}" | grep "Description")"
+    if [[ ${ARCH_OS} -eq 1 ]] ; then
+      SIZE=$(pacman -Si "${1:-}" 2>/dev/null | grep "Download Size" | cut -d: -f2 || true)
+    else
+      SIZE=$(apt show "${1:-}" 2>/dev/null | grep Download-Size | cut -d: -f2 || true)
+    fi
     if [[ -n "${SIZE}" ]]; then
       echo -e "Download-Size:${SIZE}"
     fi
@@ -65,7 +73,11 @@ print_tool_info(){
         COMMAND_="${1:-}"
       fi
       if ( command -v "${COMMAND_}" > /dev/null) || ( dpkg -s "${1}" 2> /dev/null | grep -q "Status: install ok installed" ) ; then
-        UPDATE=$(LANG=en apt-cache policy "${1}" | grep -i install | cut -d: -f2 | tr -d "^[:blank:]" | uniq | wc -l)
+        if [[ ${ARCH_OS} -eq 1 ]] ; then
+          UPDATE=1
+        else
+          UPDATE=$(LANG=en apt-cache policy "${1}" | grep -i install | cut -d: -f2 | tr -d "^[:blank:]" | uniq | wc -l)
+        fi
         if [[ "${UPDATE}" -eq 1 ]] ; then
           echo -e "${GREEN}""${1:-}"" won't be updated.""${NC}"
         else
