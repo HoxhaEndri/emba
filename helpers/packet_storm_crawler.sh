@@ -22,12 +22,38 @@ SAVE_PATH="/tmp/packet_storm"
 EMBA_CONFIG_PATH="./config/"
 TAGS_CVES=""
 NO_DUP_LINKS=""
-NUMBER_OF_PAGES=$(lynx -dump "${URL}" | grep -E "Page 1 of " | sed -r 's/.*of ([0-9])\,/\1/')
+EXPLOIT_URL="https://packetstorm.news/files/exploit/"
+TOS_URL="https://packetstorm.news/tos/"
+COOKIE_FILE="cookies.txt"
+
+echo "Fetching the TOS page to extract the authenticity token..."
+response=$(curl -s -c "$COOKIE_FILE" "$TOS_URL")
+AUTH_TOKEN=$(echo "$response" | grep -oP 'name="authenticity_token" value="\K[^"]+')
+
+if [ -z "$AUTH_TOKEN" ]; then
+    echo "Error: Could not extract authenticity token."
+    exit 1
+fi
+
+echo "Accepting the Terms of Service..."
+temp=$(curl -s -L -X POST -d "authenticity_token=$AUTH_TOKEN" \
+     -d "go=ACCEPT" \
+     -b "$COOKIE_FILE" \
+     -c "$COOKIE_FILE" \
+     "$TOS_URL")
+
+page=$(curl -s -L -b "$COOKIE_FILE" "$EXPLOIT_URL")
+NUMBER_OF_PAGES=$(echo "$page" | grep -oP 'Total Pages:</td><td>\K[0-9,]+' | head -1 | tr -d ',')
+rm -f "$COOKIE_FILE"
+echo "$NUMBER_OF_PAGES"
+exit
 
 if ! [[ "${NUMBER_OF_PAGES}" -gt 0 ]]; then
   echo "[-] Number of pages could not be extracted ... exit now"
   exit 1
 fi
+
+exit 1
 
 if ! [[ -d "${EMBA_CONFIG_PATH}" ]]; then
   echo "[-] No EMBA config directory found! Please start this crawler from the EMBA directory"
